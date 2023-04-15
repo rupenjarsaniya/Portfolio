@@ -27,7 +27,7 @@ export const Home = () => {
       <div className={s.head}>Click on The Moon 😉</div>
       <div className={s.body}>
         <div className={s.contentLeft}>
-          <p className={s.greeting}>Good Morning, I'm Rupen 👋</p>
+          <p className={s.greeting}>Good Morning, I am Rupen 👋</p>
           <h1 className={s.title}>
             Rupenkumar
             <br />

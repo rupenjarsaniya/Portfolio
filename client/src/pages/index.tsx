@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Home } from "../components/Home";
+import { Home } from "@/components/Home";
 
 export default function Index() {
   const { theme, setTheme } = useTheme();
