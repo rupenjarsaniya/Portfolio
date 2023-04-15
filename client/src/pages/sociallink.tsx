@@ -1,3 +1,3 @@
-import { FC } from "react";
-
-export const Sociallink: FC = () => <>Sociallink</>;
+export default function Sociallink() {
+  return <div>Sociallink</div>;
+}

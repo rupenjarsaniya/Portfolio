@@ -1,3 +1,3 @@
-import { FC } from "react";
-
-export const About: FC = () => <>About</>;
+export default function About() {
+  return <div>About</div>;
+}

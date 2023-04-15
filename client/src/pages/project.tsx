@@ -1,3 +1,3 @@
-import { FC } from "react";
-
-export const Project: FC = () => <>Project</>;
+export default function Project() {
+  return <div>Project</div>;
+}

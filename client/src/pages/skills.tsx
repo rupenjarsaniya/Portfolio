@@ -1,3 +1,3 @@
-import { FC } from "react";
-
-export const Skills: FC = () => <>Skills</>;
+export default function Skills() {
+  return <div>Skills</div>;
+}

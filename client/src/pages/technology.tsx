@@ -1,3 +1,3 @@
-import { FC } from "react";
-
-export const Technology: FC = () => <>Technology</>;
+export default function Technology() {
+  return <div>Technology</div>;
+}
