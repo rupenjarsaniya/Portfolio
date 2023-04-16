@@ -7,6 +7,9 @@ import Setting from "@/asserts/setting.png";
 import User from "@/asserts/user.png";
 import Image, { StaticImageData } from "next/image";
 import classNames from "classnames";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "@/store";
+import { setSidebarTab } from "@/store/portfolioSlice";
 
 type Tab = "Files" | "Search" | "Github";
 
@@ -31,10 +34,17 @@ const data: DataEntity[] = [
 ];
 
 export const Sidebar: FC = () => {
-  const [activeTab, setActiveTab] = useState<Tab>("Files");
+  const dispatch = useDispatch();
+  const { sidebarTab } = useSelector((store: AppState) => store.portflio);
 
   const handleSwitchTab = (e: any) => {
-    setActiveTab(e.target.alt);
+    if (sidebarTab === e.target.alt) {
+      dispatch(setSidebarTab(""));
+    } else {
+      if (e.target.alt) {
+        dispatch(setSidebarTab(e.target.alt));
+      }
+    }
   };
 
   return (
@@ -44,7 +54,7 @@ export const Sidebar: FC = () => {
           return (
             <div
               className={classNames(s.imageWrapper, {
-                [s.active]: activeTab === item.alt,
+                [s.active]: sidebarTab === item.alt,
               })}
               onClick={handleSwitchTab}
               key={index}
