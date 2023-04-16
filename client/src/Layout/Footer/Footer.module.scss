@@ -1,4 +1,54 @@
 .wrap {
   background: var(--background);
   border-top: 1px solid var(--borderDefault);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  color: rgb(127, 127, 127);
+}
+
+.right,
+.left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem 0.1rem;
+}
+
+.imageWrapper {
+  width: 1.2rem;
+  height: 1.2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.imageOpenWindow {
+  background-color: rgba(186, 186, 186, 0.142);
+  height: 100%;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 1.2rem;
+    height: 1.2rem;
+    object-fit: cover;
+  }
+}
+
+.right {
+  padding-right: 1rem;
 }

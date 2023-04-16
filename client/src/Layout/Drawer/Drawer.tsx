@@ -8,7 +8,6 @@ import classNames from "classnames";
 
 export const Drawer: FC = () => {
   const { sidebarTab } = useSelector((store: AppState) => store.portflio);
-  console.log(sidebarTab);
 
   return (
     <div className={classNames(s.wrap, { [s.hideDrawer]: sidebarTab === "" })}>
