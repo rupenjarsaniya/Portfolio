@@ -3,7 +3,7 @@ import s from "./Explore.module.scss";
 import Image from "next/image";
 import { Header } from "../../module/Header";
 import Arrow from "@/asserts/arrow.png";
-import Angular from "@/asserts/Angular.png";
+import Angular from "@/asserts/angular.png";
 import Css from "@/asserts/css.png";
 import JS from "@/asserts/js.png";
 import TS from "@/asserts/ts.png";
