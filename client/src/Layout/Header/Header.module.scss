@@ -1,0 +1,46 @@
+.wrap {
+  background: var(--background);
+  border-bottom: 1px solid var(--borderDefault);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.actionButton {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.firstButton {
+  background-color: #ff5f58;
+}
+
+.secondButton {
+  background-color: #febc2e;
+}
+
+.thirdButton {
+  background-color: #2cc740;
+}
+
+.fileName {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgb(127, 127, 127);
+}
+
+.iconWrapper {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}

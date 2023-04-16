@@ -1,0 +1,33 @@
+.wrap {
+  background: var(--background);
+  border-inline: 1px solid var(--borderDefault);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.imageWrapper {
+  width: 4.5rem;
+  height: 4.5rem;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  cursor: pointer;
+  border-left: 1px solid var(--background);
+}
+
+.active {
+  border-left: 1px solid rgb(255, 178, 178);
+}
+
+.topWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
