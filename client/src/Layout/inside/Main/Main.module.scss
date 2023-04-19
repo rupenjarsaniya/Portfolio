@@ -1,0 +1,11 @@
+.wrap {
+  flex: 1;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.body {
+  flex: 1;
+}

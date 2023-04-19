@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import React, { FC } from "react";
-import { Header } from "./Header";
 import s from "./Layout.module.scss";
-import { Sidebar } from "./Sidebar";
-import { Drawer } from "./Drawer";
-import { Main } from "./Main";
-import { Footer } from "./Footer";
+import { Header } from "./inside/Header";
+import { Sidebar } from "./inside/Sidebar";
+import { Drawer } from "./inside/Drawer";
+import { Main } from "./inside/Main";
+import { Footer } from "./inside/Footer";
 
 const Layout: FC<any> = ({ children }) => {
   const Router = useRouter();
