@@ -26,8 +26,9 @@ export const TabSection: FC = () => {
       <div className={s.tabWrapper}>
         {currentTab &&
           currentTab.length > 0 &&
-          currentTab.map((item) => (
+          currentTab.map((item, index) => (
             <div
+              key={index}
               className={classNames(s.tab, {
                 [s.current]: currentFile === item.split(".")[0],
               })}
