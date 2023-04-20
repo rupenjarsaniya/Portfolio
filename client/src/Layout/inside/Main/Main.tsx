@@ -13,8 +13,8 @@ export const Main: FC = () => {
     <div className={s.wrap}>
       <TabSection />
       <div className={s.body}>
-        {currentFile === "skills" && <Skills />}
-        {currentFile === "projects" && <Project />}
+        {currentFile === "skills.sol" && <Skills />}
+        {currentFile === "projects.tsx" && <Project />}
         This is good
       </div>
     </div>

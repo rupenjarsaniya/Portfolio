@@ -127,8 +127,8 @@ export const Explore: FC = () => {
                     <li
                       key={index}
                       onClick={() => {
-                        dispatch(setCurrentTab(item.title));
-                        dispatch(setCurrentFile(item.title.split(".")[0]));
+                        dispatch(setCurrentTab(item));
+                        dispatch(setCurrentFile(item.title));
                       }}
                     >
                       <div className={s.techImageWrapper}>
@@ -176,8 +176,8 @@ export const Explore: FC = () => {
                     <li
                       key={index}
                       onClick={() => {
-                        dispatch(setCurrentTab(item.title));
-                        dispatch(setCurrentFile(item.title.split(".")[0]));
+                        dispatch(setCurrentTab(item));
+                        dispatch(setCurrentFile(item.title));
                       }}
                     >
                       <div className={s.techImageWrapper}>
@@ -203,8 +203,8 @@ export const Explore: FC = () => {
                   className={s.explore}
                   key={index}
                   onClick={() => {
-                    dispatch(setCurrentTab(item.title));
-                    dispatch(setCurrentFile(item.title.split(".")[0]));
+                    dispatch(setCurrentTab(item));
+                    dispatch(setCurrentFile(item.title));
                   }}
                 >
                   <div

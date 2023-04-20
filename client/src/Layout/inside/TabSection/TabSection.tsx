@@ -15,8 +15,10 @@ export const TabSection: FC = () => {
   );
   const dispatch = useDispatch();
 
+  console.log(currentTab);
+
   useEffect(() => {
-    if (currentTab.length === 0) {
+    if (!currentTab.length || currentTab[0].title === "") {
       dispatch(setCurrentFile(""));
     }
   }, [currentTab, dispatch]);
@@ -26,26 +28,38 @@ export const TabSection: FC = () => {
       <div className={s.tabWrapper}>
         {currentTab &&
           currentTab.length > 0 &&
-          currentTab.map((item, index) => (
-            <div
-              key={index}
-              className={classNames(s.tab, {
-                [s.current]: currentFile === item.split(".")[0],
-              })}
-              onClick={() => dispatch(setCurrentFile(item.split(".")[0]))}
-            >
-              <div className={s.imageWrapper}>
-                <Image src={sol} alt="Sol" quality={100} />
-              </div>
-              <div className={s.tabName}>{item}</div>
-              <Image
-                src={close}
-                alt="Close"
-                quality={100}
-                onClick={() => dispatch(setPopCurrentTab(item))}
-              />
-            </div>
-          ))}
+          currentTab.map(
+            (item, index) =>
+              item.title !== "" && (
+                <div
+                  key={index}
+                  className={classNames(s.tab, {
+                    [s.current]: currentFile === item.title,
+                  })}
+                >
+                  <div className={s.imageWrapper}>
+                    <Image src={item.image} alt={item.title} quality={100} />
+                  </div>
+                  <div
+                    className={s.tabName}
+                    onClick={() => {
+                      dispatch(setCurrentFile(item.title));
+                    }}
+                  >
+                    {item.title}
+                  </div>
+                  <Image
+                    src={close}
+                    alt="Close"
+                    quality={100}
+                    onClick={() => {
+                      dispatch(setPopCurrentTab(item.title));
+                      dispatch(setCurrentFile(""));
+                    }}
+                  />
+                </div>
+              )
+          )}
       </div>
     </div>
   );
