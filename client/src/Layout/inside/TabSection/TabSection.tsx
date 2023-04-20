@@ -1,9 +1,7 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import s from "./TabSection.module.scss";
 import Image from "next/image";
-import sol from "@/asserts/solidity.png";
 import close from "@/asserts/close.svg";
-import jsx from "@/asserts/react.png";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "@/store";
@@ -15,10 +13,8 @@ export const TabSection: FC = () => {
   );
   const dispatch = useDispatch();
 
-  console.log(currentTab);
-
   useEffect(() => {
-    if (!currentTab.length || currentTab[0].title === "") {
+    if (!currentTab.length) {
       dispatch(setCurrentFile(""));
     }
   }, [currentTab, dispatch]);
@@ -26,8 +22,7 @@ export const TabSection: FC = () => {
   return (
     <div className={s.wrap}>
       <div className={s.tabWrapper}>
-        {currentTab &&
-          currentTab.length > 0 &&
+        {currentTab.length > 0 &&
           currentTab.map(
             (item, index) =>
               item.title !== "" && (

@@ -4,19 +4,14 @@ import { AppState } from "./index";
 export interface PortfolioEntity {
   drawerStatus: boolean;
   sidebarTab: "Files" | "Search" | "Github" | "";
-  currentTab: [
-    {
-      image: string;
-      title: string;
-    }
-  ];
+  currentTab: Array<{ image: string; title: string }>;
   currentFile: string;
 }
 
 const initialState: PortfolioEntity = {
   drawerStatus: true,
   sidebarTab: "Files",
-  currentTab: [{ image: "", title: "" }],
+  currentTab: [],
   currentFile: "",
 };
 
@@ -35,20 +30,15 @@ export const portfolioSlice = createSlice({
         (t: any) => t.title === action.payload.title
       );
       if (haveOne) return;
-      if (state.currentTab[0].title === "") {
-        state.currentTab.pop();
-      }
       state.currentTab.push({
         title: action.payload.title,
         image: action.payload.image,
       });
     },
     setPopCurrentTab(state, action) {
-      if (state.currentTab.length === 1) state.currentTab.pop();
-      const index = state.currentTab.findIndex(
-        (s) => s.title === action.payload
+      state.currentTab = state.currentTab.filter(
+        (s) => s.title !== action.payload
       );
-      state.currentTab.splice(index, 1);
     },
     setCurrentFile(state, action) {
       state.currentFile = action.payload;
