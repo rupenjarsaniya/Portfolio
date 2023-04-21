@@ -32,10 +32,6 @@ const data = [
         image: JS,
         title: "workExperience.js",
       },
-      {
-        image: Css,
-        title: "language.css",
-      },
     ],
   },
   {
