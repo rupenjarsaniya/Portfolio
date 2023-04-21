@@ -18,6 +18,12 @@ export const Me: FC = () => (
       that leverage the power of blockchain technology. With my skills and
       experience, I am confident in my ability to solve complex technical
       challenges and contribute to any software development team.
+      <ul>
+        <li>I Know,</li>
+        <li>Gujarati - Native or Bilingual Proficiency</li>
+        <li>English - Professional Working Proficiency</li>
+        <li>Hindi - Full Professional Proficiency</li>
+      </ul>
     </div>
   </div>
 );

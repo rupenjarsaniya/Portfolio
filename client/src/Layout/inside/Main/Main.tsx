@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { AppState } from "@/store";
 import { Me } from "./inside/About/Me";
 import { Education } from "./inside/About/Education";
-import { Language } from "./inside/About/Language";
 import { SocialLinks } from "./inside/SocialLinks";
 
 export const Main: FC = () => {
@@ -17,7 +16,6 @@ export const Main: FC = () => {
       <div className={s.body}>
         {currentFile === "me.ts" && <Me />}
         {currentFile === "education.java" && <Education />}
-        {currentFile === "language.css" && <Language />}
         {currentFile === "socialLinks.md" && <SocialLinks />}
       </div>
     </div>
