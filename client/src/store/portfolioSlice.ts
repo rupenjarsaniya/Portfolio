@@ -11,7 +11,12 @@ export interface PortfolioEntity {
 const initialState: PortfolioEntity = {
   drawerStatus: true,
   sidebarTab: "Files",
-  currentTab: [],
+  currentTab: [
+    {
+      image: "",
+      title: "",
+    },
+  ],
   currentFile: "",
 };
 

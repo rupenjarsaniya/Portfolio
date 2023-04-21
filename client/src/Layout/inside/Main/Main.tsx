@@ -1,10 +1,12 @@
 import { FC } from "react";
 import s from "./Main.module.scss";
 import { TabSection } from "../TabSection";
-import Skills from "@/pages/skills";
-import Project from "@/pages/project";
 import { useSelector } from "react-redux";
 import { AppState } from "@/store";
+import { Me } from "./inside/About/Me";
+import { Education } from "./inside/About/Education";
+import { Language } from "./inside/About/Language";
+import { SocialLinks } from "./inside/SocialLinks";
 
 export const Main: FC = () => {
   const { currentFile } = useSelector((store: AppState) => store.portflio);
@@ -13,9 +15,10 @@ export const Main: FC = () => {
     <div className={s.wrap}>
       <TabSection />
       <div className={s.body}>
-        {currentFile === "skills.sol" && <Skills />}
-        {currentFile === "projects.tsx" && <Project />}
-        This is good
+        {currentFile === "me.ts" && <Me />}
+        {currentFile === "education.java" && <Education />}
+        {currentFile === "language.css" && <Language />}
+        {currentFile === "socialLinks.md" && <SocialLinks />}
       </div>
     </div>
   );

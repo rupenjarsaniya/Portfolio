@@ -1,0 +1,30 @@
+.wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
+}
+
+.imageWrapper {
+  max-width: 30rem;
+  border-radius: 50%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.intro {
+  flex: 1;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  text-align: justify;
+  font-family: "Courier New", Courier, monospace;
+}

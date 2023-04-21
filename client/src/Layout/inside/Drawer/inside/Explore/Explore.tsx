@@ -34,7 +34,7 @@ const data = [
       },
       {
         image: Css,
-        title: "Language.css",
+        title: "language.css",
       },
     ],
   },
@@ -73,7 +73,7 @@ const data = [
 ];
 
 export const Explore: FC = () => {
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(true);
   const [aboutExpand, setAboutExpand] = useState(false);
   const [technologyExpand, setTechnologyExpand] = useState(false);
   const dispatch = useDispatch();
