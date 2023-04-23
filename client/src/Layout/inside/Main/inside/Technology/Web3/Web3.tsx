@@ -1,0 +1,39 @@
+import { FC } from "react";
+import s from "./Web3.module.scss";
+import BlockchainIcon from "@/asserts/technology/blockchain.svg";
+import EthreumIcon from "@/asserts/technology/ethereum.svg";
+import SolidityIcon from "@/asserts/technology/solidity.svg";
+import NFTIcon from "@/asserts/technology/nft.svg";
+import Image from "next/image";
+
+export const Web3: FC = () => (
+  <div className={s.wrap}>
+    <h1>Web3.o Technologies</h1>
+    <div className={s.body}>
+      <div className={s.wrapper}>
+        <div className={s.image}>
+          <Image src={BlockchainIcon} alt="BlockchainIcon" />
+        </div>
+        <h4>Blockchain</h4>
+      </div>
+      <div className={s.wrapper}>
+        <div className={s.image}>
+          <Image src={SolidityIcon} alt="SolidityIcon" />
+        </div>
+        <h4>Solidity</h4>
+      </div>
+      <div className={s.wrapper}>
+        <div className={s.image}>
+          <Image src={EthreumIcon} alt="EthreumIcon" />
+        </div>
+        <h4>Ethereum</h4>
+      </div>
+      <div className={s.wrapper}>
+        <div className={s.image}>
+          <Image src={NFTIcon} alt="NFTIcon" />
+        </div>
+        <h4>NFT</h4>
+      </div>
+    </div>
+  </div>
+);

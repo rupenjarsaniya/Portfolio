@@ -1,7 +1,7 @@
 import { FC } from "react";
 import s from "./Footer.module.scss";
 import OpenWindow from "@/asserts/remote.svg";
-import Github from "@/asserts/github.svg";
+import Github from "@/asserts/technology/github.svg";
 import Error from "@/asserts/error.svg";
 import Warning from "@/asserts/warning.svg";
 import Bell from "@/asserts/bell.svg";

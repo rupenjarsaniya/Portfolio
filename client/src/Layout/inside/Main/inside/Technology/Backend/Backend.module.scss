@@ -1,0 +1,41 @@
+.wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--backgroundDrawer);
+  border-radius: 0.7rem;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  width: 12rem;
+
+  h4 {
+    font-weight: 300;
+  }
+}
+
+.image {
+  width: 7.5rem;
+  height: 7.5rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

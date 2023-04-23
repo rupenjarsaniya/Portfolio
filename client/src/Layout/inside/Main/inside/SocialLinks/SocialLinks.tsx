@@ -64,7 +64,7 @@ const data = [
 
 export const SocialLinks: FC = () => (
   <div className={s.wrap}>
-    <h1 className={s.title}>Let's Connect For Something Great! 🎉</h1>
+    <h1 className={s.title}>Let&apos;s Connect For Something Great! 🎉</h1>
     <div className={s.socialLinks}>
       {data?.map((item, index) => (
         <Link

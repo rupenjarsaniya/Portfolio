@@ -1,0 +1,66 @@
+.wrap {
+  flex: 1;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.4rem;
+}
+
+.projectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.projectCardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  text-align: justify;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.responsibilities {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  ul {
+    list-style: disc;
+  }
+}
+
+.technologies {
+  display: flex;
+  gap: 0.7rem;
+
+  li {
+    background: gray;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    background: #9966ff71;
+    color: #c5a8ff;
+  }
+}

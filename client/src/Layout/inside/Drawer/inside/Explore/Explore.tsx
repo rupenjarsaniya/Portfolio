@@ -3,13 +3,12 @@ import s from "./Explore.module.scss";
 import Image from "next/image";
 import { Header } from "../../module/Header";
 import Arrow from "@/asserts/arrow.png";
-import Angular from "@/asserts/angular.png";
-import Css from "@/asserts/css.png";
-import JS from "@/asserts/js.png";
-import TS from "@/asserts/ts.png";
-import Java from "@/asserts/java.png";
-import Sol from "@/asserts/solidity.png";
-import TSX from "@/asserts/react.png";
+import Angular from "@/asserts/technology/angular.svg";
+import JS from "@/asserts/technology/js.svg";
+import TS from "@/asserts/technology/ts.svg";
+import Java from "@/asserts/technology/java.svg";
+import Sol from "@/asserts/technology/ethereum.svg";
+import TSX from "@/asserts/technology/react.svg";
 import MD from "@/asserts/md.png";
 import VsCode from "@/asserts/vscode.png";
 import classNames from "classnames";
@@ -212,7 +211,7 @@ export const Explore: FC = () => {
                       <div className={s.techImageWrapper}>
                         <Image
                           src={item.image}
-                          alt={item.title}
+                          alt={item.title as string}
                           quality={100}
                         />
                       </div>

@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import s from "./Sidebar.module.scss";
-import Github from "@/asserts/github.png";
+import Github from "@/asserts/github.svg";
 import Files from "@/asserts/files.png";
 import Search from "@/asserts/search.png";
 import Setting from "@/asserts/setting.png";

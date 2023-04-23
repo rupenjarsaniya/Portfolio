@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import s from "./Home.module.scss";
 import Link from "next/link";
 
 export const Home = () => {
   const [show, setShow] = useState(true);
 
-  const listenToScrol = () => {
+  const listenToScroll = useCallback(() => {
     let heightToHideFrom = 10;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
@@ -15,12 +15,12 @@ export const Home = () => {
     } else {
       setShow(true);
     }
-  };
+  }, [show]);
 
   useEffect(() => {
-    window.addEventListener("scroll", listenToScrol);
-    return () => window.removeEventListener("scroll", listenToScrol);
-  }, []);
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, [listenToScroll]);
 
   return (
     <div className={s.wrap}>
@@ -42,7 +42,7 @@ export const Home = () => {
           </div>
         </div>
         <div className={s.contentRight}>
-          <Link href="/about">
+          <Link href="/dev">
             <div className={s.moon}>
               <div className={`${s.crater} ${s.crater1}`}></div>
               <div className={`${s.crater} ${s.crater2}`}></div>
