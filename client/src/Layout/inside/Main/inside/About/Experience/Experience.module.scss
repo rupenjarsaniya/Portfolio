@@ -13,19 +13,69 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .cardHeader {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
   gap: 2.4rem;
+  cursor: pointer;
+  padding: 2.4rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.companyDetail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  h4 {
+    font-weight: 400;
+  }
+}
+
+.time {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.imageWrapper {
+  width: 1.6rem;
+  height: 1.6rem;
+  transform: rotateX(180deg);
+  transition: 0.5s;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.active {
+  transform: rotateX(0deg);
 }
 
 .projectWrapper {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  padding: 0 2.4rem 2.4rem;
+
+  > div:not(:last-child) {
+    border-bottom: 1px solid var(--borderDefault);
+    padding-bottom: 2.4rem;
+  }
 }
 
 .projectCardWrapper {
@@ -56,13 +106,12 @@
 
 .technologies {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.7rem;
 
   li {
-    background: gray;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    background: #9966ff71;
-    color: #c5a8ff;
   }
 }
