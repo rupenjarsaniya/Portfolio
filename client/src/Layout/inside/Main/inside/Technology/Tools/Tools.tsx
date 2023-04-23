@@ -7,6 +7,7 @@ import HeorkuIcon from "@/asserts/technology/heroku.svg";
 import PostmanIcon from "@/asserts/technology/postman.svg";
 import GithubIcon from "@/asserts/technology/github.svg";
 import NetlifyIcon from "@/asserts/technology/netlify.svg";
+import GitIcon from "@/asserts/technology/git.svg";
 import Image from "next/image";
 
 export const Tools: FC = () => (
@@ -54,6 +55,12 @@ export const Tools: FC = () => (
           <Image src={NetlifyIcon} alt="NetlifyIcon" />
         </div>
         <h4>Netlify</h4>
+      </div>
+      <div className={s.wrapper}>
+        <div className={s.image}>
+          <Image src={GitIcon} alt="GitIcon" />
+        </div>
+        <h4>Git</h4>
       </div>
     </div>
   </div>
