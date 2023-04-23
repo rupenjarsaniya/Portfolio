@@ -1,5 +1,6 @@
 .wrap {
   flex: 1;
+  height: 100%;
 }
 
 .cardsWrapper {
@@ -49,6 +50,7 @@
 
   ul {
     list-style: disc;
+    margin-left: 1.6rem;
   }
 }
 

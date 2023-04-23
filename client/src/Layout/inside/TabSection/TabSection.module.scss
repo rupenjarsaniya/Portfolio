@@ -2,6 +2,8 @@
   background: var(--backgroundDrawer);
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 0;
 
   .example::-webkit-scrollbar {
     display: none;
