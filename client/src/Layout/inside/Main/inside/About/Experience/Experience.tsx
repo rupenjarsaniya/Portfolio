@@ -38,24 +38,6 @@ const data = [
           "ZCrypto is A blockchain-based trading platform is a decentralised marketplace where buyers and sellers can trade digital assets such as cryptocurrencies, tokens, and other digital assets in a secure, transparent, and immutable way. The platform uses a blockchain network to facilitate transactions, record ownership, and ensure the integrity of the trading process.The platform also provides users with real-time market data, enabling them to make informed decisions about their trades.",
         technologies: ["Blockchain", "Ethereum", "NextJS", "D3.js", "Solidity"],
       },
-      {
-        projectName: "ZCrypto",
-        Responsibilities: [
-          "Requirement gathering & client communication.",
-          "Web3 project on blockchain, solidity.",
-          "Manage and run tasks based on sprints & jira.",
-          "Customized business logic using plugins & Develop complex business logic.",
-          "Worked on core part of project.",
-          "Code review and refactoring.",
-          "CI/CD setup using circleci.",
-          "Implemented D3.JS as require for graphs.",
-          "Design and develop core components.",
-          "Requirement analysis and MVC design & Design pixel perfect UI design.",
-        ],
-        description:
-          "ZCrypto is A blockchain-based trading platform is a decentralised marketplace where buyers and sellers can trade digital assets such as cryptocurrencies, tokens, and other digital assets in a secure, transparent, and immutable way. The platform uses a blockchain network to facilitate transactions, record ownership, and ensure the integrity of the trading process.The platform also provides users with real-time market data, enabling them to make informed decisions about their trades.",
-        technologies: ["Blockchain", "Ethereum", "NextJS", "D3.js", "Solidity"],
-      },
     ],
   },
   // {

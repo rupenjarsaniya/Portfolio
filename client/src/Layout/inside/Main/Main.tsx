@@ -12,6 +12,7 @@ import { Backend } from "./inside/Technology/Backend";
 import { Web3 } from "./inside/Technology/Web3";
 import { Tools } from "./inside/Technology/Tools";
 import { Skills } from "./inside/Skills";
+import { Project } from "./inside/Project";
 
 export const Main: FC = () => {
   const { currentFile } = useSelector((store: AppState) => store.portflio);
@@ -29,6 +30,7 @@ export const Main: FC = () => {
         {currentFile === "web3.sol" && <Web3 />}
         {currentFile === "others" && <Tools />}
         {currentFile === "skills.sol" && <Skills />}
+        {currentFile === "projects.tsx" && <Project />}
       </div>
     </div>
   );
