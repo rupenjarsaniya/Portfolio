@@ -131,11 +131,6 @@ export const Project: FC = () => {
       {data.map((item, index) => (
         <div key={index} className={s.card}>
           <h3 className={s.title}>{item.title}</h3>
-          {Boolean(item.image) && (
-            <div className={s.imageWrapper}>
-              <Image src={item.image} alt="random" width={15} height={15} />
-            </div>
-          )}
           <div className={s.body}>
             <div className={s.description}>
               {item.description.length > 150 ? (

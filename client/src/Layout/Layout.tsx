@@ -6,16 +6,18 @@ import { Sidebar } from "./inside/Sidebar";
 import { Drawer } from "./inside/Drawer";
 import { Main } from "./inside/Main";
 import { Footer } from "./inside/Footer";
+import Head from "next/head";
 
 const Layout: FC<any> = ({ children }) => {
   const Router = useRouter();
 
   return (
     <>
-      {Router.pathname === "/" ? (
-        <>{children}</>
-      ) : (
+      {Router.pathname === "/dev" ? (
         <div className={s.wrap}>
+          <Head>
+            <title>Portfolio - Visual Studio code</title>
+          </Head>
           <Header />
           <div className={s.body}>
             <Sidebar />
@@ -24,6 +26,8 @@ const Layout: FC<any> = ({ children }) => {
           </div>
           <Footer />
         </div>
+      ) : (
+        <>{children}</>
       )}
     </>
   );
