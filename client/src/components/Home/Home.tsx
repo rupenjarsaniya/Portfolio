@@ -71,7 +71,7 @@ export const Home = () => {
             <div className={`${s.subTitleBorder} ${s.borderFirst}`}></div>
             <div className={`${s.subTitleBorder} ${s.borderSecond}`}></div>
             <div className={s.subTitle}>
-              Blockchain Developer / <br /> Full Stack Developer.
+              Software Engineer / <br /> Blockchain Developer.
             </div>
           </div>
           <button className={s.downloadButton} onClick={downloadResume}>
