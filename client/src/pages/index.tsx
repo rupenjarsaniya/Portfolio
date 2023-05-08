@@ -4,17 +4,6 @@ import { useEffect, useState } from "react";
 import { Home } from "@/components/Home";
 
 export default function Index() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <>
       <Head>

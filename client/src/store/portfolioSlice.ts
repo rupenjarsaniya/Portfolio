@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { AppState } from "./index";
+import { useTheme } from "next-themes";
 
 export interface PortfolioEntity {
   drawerStatus: boolean;

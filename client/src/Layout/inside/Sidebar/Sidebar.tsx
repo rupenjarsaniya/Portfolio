@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import s from "./Sidebar.module.scss";
 import Github from "@/asserts/github.svg";
 import Files from "@/asserts/files.png";
@@ -10,6 +10,10 @@ import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "@/store";
 import { setSidebarTab } from "@/store/portfolioSlice";
+import CorrectIcon from "@/asserts/correct.svg";
+import { useTheme } from "next-themes";
+import { setCurrentFile, setCurrentTab } from "@/store/portfolioSlice";
+import Angular from "@/asserts/technology/angular.svg";
 
 type Tab = "Files" | "Search" | "Github";
 
@@ -36,6 +40,7 @@ const data: DataEntity[] = [
 export const Sidebar: FC = () => {
   const dispatch = useDispatch();
   const { sidebarTab } = useSelector((store: AppState) => store.portflio);
+  const [showBox, setShowBox] = useState(false);
 
   const handleSwitchTab = (e: any) => {
     if (sidebarTab === e.target.alt) {
@@ -46,6 +51,18 @@ export const Sidebar: FC = () => {
       }
     }
   };
+
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    setTheme("system");
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className={s.wrap}>
@@ -66,10 +83,58 @@ export const Sidebar: FC = () => {
       </div>
       <div>
         <div className={s.imageWrapper}>
-          <Image src={User} alt="User" quality={100} />
+          <Image
+            src={User}
+            alt="User"
+            quality={100}
+            onClick={() => {
+              dispatch(
+                setCurrentTab({
+                  image: Angular,
+                  title: "me.ts",
+                })
+              );
+              dispatch(setCurrentFile("me.ts"));
+            }}
+          />
         </div>
         <div className={s.imageWrapper}>
-          <Image src={Setting} alt="Setting" quality={100} />
+          <Image
+            src={Setting}
+            alt="Setting"
+            quality={100}
+            onClick={() => setShowBox(!showBox)}
+          />
+          <div
+            className={classNames(s.themeSelecter, {
+              [s.themeSelecterFlex]: showBox,
+            })}
+          >
+            <div className={s.themeName} onClick={() => setTheme("system")}>
+              <div className={s.iconWrapper}>
+                {theme === "system" && (
+                  <Image src={CorrectIcon} alt="correct" />
+                )}
+              </div>
+              Github Dark Default
+            </div>
+            <div className={s.themeName} onClick={() => setTheme("githubdark")}>
+              <div className={s.iconWrapper}>
+                {theme === "githubdark" && (
+                  <Image src={CorrectIcon} alt="correct" />
+                )}
+              </div>
+              Github Dark
+            </div>
+            <div className={s.themeName} onClick={() => setTheme("monokai")}>
+              <div className={s.iconWrapper}>
+                {theme === "monokai" && (
+                  <Image src={CorrectIcon} alt="correct" />
+                )}
+              </div>
+              Monokai
+            </div>
+          </div>
         </div>
       </div>
     </div>

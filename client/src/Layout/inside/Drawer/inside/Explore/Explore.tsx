@@ -69,8 +69,8 @@ const data = [
 
 export const Explore: FC = () => {
   const [state, setState] = useState(true);
-  const [aboutExpand, setAboutExpand] = useState(false);
-  const [technologyExpand, setTechnologyExpand] = useState(false);
+  const [aboutExpand, setAboutExpand] = useState(true);
+  const [technologyExpand, setTechnologyExpand] = useState(true);
   const dispatch = useDispatch();
 
   return (
