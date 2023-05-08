@@ -33,7 +33,7 @@ const data = [
     background: "#08acf440",
   },
   {
-    link: "https://www.medium.com/rupenjarsaniya",
+    link: "https://www.medium.com/@rupenjarsaniya",
     icon: mediumIcon,
     title: "Medium",
     borderColor: "#ac9c94",
