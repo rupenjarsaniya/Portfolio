@@ -9,7 +9,9 @@ import { AppState } from "@/store";
 import { useRouter } from "next/router";
 
 export const Header: FC = () => {
-  const { drawerStatus } = useSelector((store: AppState) => store.portflio);
+  const { drawerStatus, currentFile } = useSelector(
+    (store: AppState) => store.portflio
+  );
   const dispatch = useDispatch();
   const Router = useRouter();
 
@@ -29,7 +31,9 @@ export const Header: FC = () => {
           onClick={() => Router.push("/")}
         />
       </div>
-      <div className={s.fileName}>About.tsx - Portfolio</div>
+      <div className={s.fileName}>
+        {currentFile ? currentFile : "Welcome"} - Portfolio
+      </div>
       <div className={s.iconWrapper}>
         <Image
           src={splitImage}

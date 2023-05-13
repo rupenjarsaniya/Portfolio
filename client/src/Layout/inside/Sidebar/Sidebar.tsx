@@ -27,14 +27,14 @@ const data: DataEntity[] = [
     image: Files,
     alt: "Files",
   },
-  {
-    image: Search,
-    alt: "Search",
-  },
-  {
-    image: Github,
-    alt: "Github",
-  },
+  // {
+  //   image: Search,
+  //   alt: "Search",
+  // },
+  // {
+  //   image: Github,
+  //   alt: "Github",
+  // },
 ];
 
 export const Sidebar: FC = () => {
@@ -82,29 +82,22 @@ export const Sidebar: FC = () => {
         })}
       </div>
       <div>
-        <div className={s.imageWrapper}>
-          <Image
-            src={User}
-            alt="User"
-            quality={100}
-            onClick={() => {
-              dispatch(
-                setCurrentTab({
-                  image: Angular,
-                  title: "me.ts",
-                })
-              );
-              dispatch(setCurrentFile("me.ts"));
-            }}
-          />
+        <div
+          className={s.imageWrapper}
+          onClick={() => {
+            dispatch(
+              setCurrentTab({
+                image: Angular,
+                title: "me.ts",
+              })
+            );
+            dispatch(setCurrentFile("me.ts"));
+          }}
+        >
+          <Image src={User} alt="User" quality={100} />
         </div>
-        <div className={s.imageWrapper}>
-          <Image
-            src={Setting}
-            alt="Setting"
-            quality={100}
-            onClick={() => setShowBox(!showBox)}
-          />
+        <div className={s.imageWrapper} onClick={() => setShowBox(!showBox)}>
+          <Image src={Setting} alt="Setting" quality={100} />
           <div
             className={classNames(s.themeSelecter, {
               [s.themeSelecterFlex]: showBox,
