@@ -5,12 +5,35 @@ import Image from "next/image";
 
 const data = [
   {
+    title: "E Commerce Supplychain",
+    image: "https://picsum.photos/200/300/?blur",
+    description:
+      "I developed an e-commerce supply chain web app using blockchain technology. It offers transparency, automation through smart contracts, product traceability, supply chain visibility, secure transactions, data analytics, and seamless integration. The project showcases my expertise in blockchain, supply chain management, and software development, providing an efficient and trustworthy solution for the industry.",
+    technology: [
+      "Blockchain",
+      "Solidity",
+      "Ethereum",
+      "ReactJS",
+      "Chai",
+      "Mocha",
+    ],
+
+    github: "https://github.com/rupenjarsaniya/E-Commerce-Supplychain",
+    livedemo: "https://e-commerce-supplychain.vercel.app/",
+
+    background: "#fedd9954",
+    color: "#fedd99",
+  },
+  {
     title: "Solidity Contracts",
     image: "https://picsum.photos/200/300/?blur",
     description:
       "Solidity Contracts. I have published a solidity contract weekly here!",
     technology: ["Solidity", "Ethereum"],
-    url: "https://github.com/rupenjarsaniya/solidity-help",
+
+    github: "https://github.com/rupenjarsaniya/solidity-help",
+    gitbook: "https://blockchainbuilders.gitbook.io/solidity/",
+
     background: "#be252554",
     color: "#be2525",
   },
@@ -29,7 +52,7 @@ const data = [
       "ReactJS",
       "Sanity.io",
     ],
-    url: "https://github.com/rupenjarsaniya/Twitter-Web3.0",
+    github: "https://github.com/rupenjarsaniya/Twitter-Web3.0",
     background: "#beb92554",
     color: "#beb925",
   },
@@ -48,7 +71,7 @@ const data = [
       "ReactJS",
       "Sanity.io",
     ],
-    url: "https://github.com/rupenjarsaniya/uniswap-web3.0",
+    github: "https://github.com/rupenjarsaniya/uniswap-web3.0",
     background: "#2dbe2554",
     color: "#2dbe25",
   },
@@ -65,7 +88,7 @@ const data = [
       "Redux",
       "Paytm gateway",
     ],
-    url: "https://github.com/rupenjarsaniya/foody",
+    github: "https://github.com/rupenjarsaniya/foody",
     background: "#25bea554",
     color: "#25bea5",
   },
@@ -82,7 +105,7 @@ const data = [
       "Redux",
       "Socket.io",
     ],
-    url: "https://github.com/rupenjarsaniya/facegram",
+    github: "https://github.com/rupenjarsaniya/facegram",
     background: "#93f20554",
     color: "#93f205",
   },
@@ -92,7 +115,7 @@ const data = [
     description:
       "The Food Recipe web application is a platform where users can share their favorite recipes, discover new dishes, and interact with other food enthusiasts. Users can post their recipes, along with images, ingredients, and instructions. They can also like, share, and comment on other users' posts, as well as save posts to try later. The platform creates a community of food lovers, where users can exchange ideas and tips, and explore different cuisines from around the world.",
     technology: ["NextJS", "MongoDB", "Redux", "Tailwind"],
-    url: "https://github.com/rupenjarsaniya/cookitup",
+    github: "https://github.com/rupenjarsaniya/cookitup",
     background: "#6d8be354",
     color: "#6d8be3",
   },
@@ -102,7 +125,7 @@ const data = [
     description:
       "This is project of chatting web application offers a platform for users to connect with each other in private rooms. Users can create their chat rooms, invite others to join, and have private conversations. The web application also allows users to customize their profiles and interact with others through a user-friendly interface. With its robust features and secure environment, our chatting web application offers a seamless chatting experience to users.",
     technology: ["ReactJS", "NodeJS", "Socket.io"],
-    url: "https://github.com/rupenjarsaniya/bunny",
+    github: "https://github.com/rupenjarsaniya/bunny",
     background: "#51825554",
     color: "#518255",
   },
@@ -112,7 +135,7 @@ const data = [
     description:
       "This is ecommerce clothing website offers a wide range of clothing options for customers to choose from, and payments can be made using Paytm. Customers can browse through the website, add items to their cart, and complete the payment process using the Paytm gateway. Our website also offers various delivery options, including express delivery, and provides customers with order tracking information.",
     technology: ["NextJS", "MongoDB", "Tailwind", "Paytm gateway"],
-    url: "https://github.com/rupenjarsaniya/codeswear",
+    github: "https://github.com/rupenjarsaniya/codeswear",
     background: "#8c347d54",
     color: "#8c347d",
   },
@@ -158,9 +181,23 @@ export const Project: FC = () => {
                 </li>
               ))}
             </ul>
-            <Link href={item.url} className={s.link} target="_blank">
-              Source Code
-            </Link>
+            <div className={s.urls}>
+              {
+                <Link href={item.github} className={s.link} target="_blank">
+                  Source Code
+                </Link>
+              }
+              {item.gitbook && (
+                <Link href={item.gitbook} className={s.link} target="_blank">
+                  Git book
+                </Link>
+              )}
+              {item.livedemo && (
+                <Link href={item.livedemo} className={s.link} target="_blank">
+                  Live Demo
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       ))}
