@@ -9,15 +9,16 @@ export const Me: FC = () => (
       <Image src={MePic} alt="MePic" quality={100} />
     </div>
     <div className={s.intro}>
-      Hello 👋, I am a software engineer with 1 year of experience in the
-      blockchain space. I have expertise in programming languages such as
-      JavaScript, Java, and TypeScript. Additionally, I possess strong knowledge
-      in data structures and algorithms. My experience includes working with
-      various blockchain platforms like Ethereum, Hyperledger, and Corda. I am
-      passionate about developing decentralized applications and smart contracts
-      that leverage the power of blockchain technology. With my skills and
-      experience, I am confident in my ability to solve complex technical
-      challenges and contribute to any software development team.
+      Hello, I am a highly skilled professional with a passion for developing
+      innovative blockchain solutions. With a strong background in programming
+      languages such as Solidity, Rust, Typescript, JavaScript, and Java, I am
+      experienced in creating smart contracts and decentralized applications
+      (DApps). My goal is to leverage my technical expertise and industry
+      knowledge to contribute to cutting-edge projects in the blockchain space.
+      I am dedicated to continuous learning and staying updated with the latest
+      trends and advancements in blockchain technology. I thrive in
+      collaborative environments, where I can apply my problem-solving skills
+      and attention to detail to deliver high-quality solutions.
       <ul>
         <li>I Know,</li>
         <li>Gujarati - Native or Bilingual Proficiency</li>

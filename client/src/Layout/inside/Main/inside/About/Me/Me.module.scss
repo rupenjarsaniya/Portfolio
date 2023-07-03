@@ -4,14 +4,10 @@
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-
-  @media (min-width: 1200px) {
-    flex-direction: row;
-  }
 }
 
 .imageWrapper {
-  max-width: 30rem;
+  max-width: 33rem;
   border-radius: 50%;
 
   img {

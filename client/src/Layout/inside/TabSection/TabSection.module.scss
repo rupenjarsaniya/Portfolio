@@ -5,11 +5,11 @@
   position: sticky;
   top: 0;
 
-  .example::-webkit-scrollbar {
+  .tabWrapper::-webkit-scrollbar {
     display: none;
   }
 
-  .example {
+  .tabWrapper {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }

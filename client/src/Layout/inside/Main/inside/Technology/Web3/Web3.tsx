@@ -3,6 +3,7 @@ import s from "./Web3.module.scss";
 import BlockchainIcon from "@/asserts/technology/blockchain.svg";
 import EthreumIcon from "@/asserts/technology/ethereum.svg";
 import SolidityIcon from "@/asserts/technology/solidity.svg";
+import RustIcon from "@/asserts/technology/rust.svg";
 import NFTIcon from "@/asserts/technology/nft.svg";
 import TruffleIcon from "@/asserts/technology/truffle.svg";
 import HardhatIcon from "@/asserts/technology/hardhat.webp";
@@ -23,6 +24,12 @@ export const Web3: FC = () => (
           <Image src={SolidityIcon} alt="SolidityIcon" />
         </div>
         <h4>Solidity</h4>
+      </div>
+      <div className={s.wrapper}>
+        <div className={s.image}>
+          <Image src={RustIcon} alt="RustIcon" />
+        </div>
+        <h4>Rust</h4>
       </div>
       <div className={s.wrapper}>
         <div className={s.image}>
