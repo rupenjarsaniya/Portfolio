@@ -21,9 +21,9 @@ export const Me: FC = () => (
       and attention to detail to deliver high-quality solutions.
       <ul>
         <li>I Know,</li>
-        <li>Gujarati - Native or Bilingual Proficiency</li>
         <li>English - Professional Working Proficiency</li>
         <li>Hindi - Full Professional Proficiency</li>
+        <li>Gujarati - Native or Bilingual Proficiency</li>
       </ul>
     </div>
   </div>

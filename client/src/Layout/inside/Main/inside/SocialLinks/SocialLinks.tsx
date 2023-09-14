@@ -9,8 +9,16 @@ import gfgIcon from "@/asserts/social/gfg.png";
 import linkedinIcon from "@/asserts/social/linkedin.png";
 import mediumIcon from "@/asserts/social/medium.png";
 import websiteIcon from "@/asserts/social/website.png";
+import upworkIcon from "@/asserts/social/upwork.png";
 
 const data = [
+  // {
+  //   link: "https://www.upwork.com/freelancers/rupenkumarj",
+  //   icon: upworkIcon,
+  //   title: "Hire me on Upwork",
+  //   borderColor: "#48a444",
+  //   background: "#48a44440",
+  // },
   {
     link: "https://www.github.com/rupenjarsaniya",
     icon: githubIcon,
@@ -65,6 +73,16 @@ const data = [
 export const SocialLinks: FC = () => (
   <div className={s.wrap}>
     <h1 className={s.title}>Let&apos;s Connect For Something Great! 🎉</h1>
+    <Link
+      href="https://www.upwork.com/freelancers/rupenkumarj"
+      target="_blank"
+      className={s.link}
+    >
+      <div className={s.imageWrapper}>
+        <Image src={upworkIcon} alt="upworkIcon" quality={100} />
+      </div>
+      <h3>Hire me on Upwork!</h3>
+    </Link>
     <div className={s.socialLinks}>
       {data?.map((item, index) => (
         <Link

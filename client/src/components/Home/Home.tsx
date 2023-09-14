@@ -2,31 +2,35 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import s from "./Home.module.scss";
 import Link from "next/link";
 import axios from "axios";
+import Image from "next/image";
+import upworkIcon from "@/asserts/social/upwork.png";
+
+function getGreet() {
+  let greet = "goodEvening";
+
+  const hours = new Date().getHours();
+
+  if (hours >= 21 || hours < 3) {
+    greet = "Good Night";
+  } else if (hours < 12) {
+    greet = "Good Morning";
+  } else if (hours < 16) {
+    greet = "Good Afternoon";
+  }
+
+  return greet;
+}
 
 export const Home = () => {
-  const [show, setShow] = useState(true);
-  const [greeting, setGreeting] = useState("");
+  const [greet, setGreet] = useState(getGreet());
 
-  const getGreeting = useCallback(() => {
-    let currentHour = new Date().getUTCHours();
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGreet(getGreet());
+    }, 10000);
 
-    if (currentHour >= 3 && currentHour < 12) return "Good Morning!";
-    else if (currentHour >= 12 && currentHour < 16) return "Good Afternoon!";
-    else if (currentHour >= 16 && currentHour < 21) return "Good Evening!";
-    else return "Good Night!";
+    return () => clearInterval(interval);
   }, []);
-
-  const listenToScroll = useCallback(() => {
-    let heightToHideFrom = 10;
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-
-    if (winScroll > heightToHideFrom) {
-      show && setShow(false);
-    } else {
-      setShow(true);
-    }
-  }, [show]);
 
   const downloadResume = useCallback(() => {
     axios
@@ -45,23 +49,12 @@ export const Home = () => {
       .catch((error: Error) => console.log("Error downloading file: ", error));
   }, []);
 
-  useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
-    return () => window.removeEventListener("scroll", listenToScroll);
-  }, [listenToScroll]);
-
-  useEffect(() => {
-    setGreeting(getGreeting);
-    const interval = window.setInterval(() => setGreeting(getGreeting), 10000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className={s.wrap}>
       <div className={s.head}>Click On The Moon 😉</div>
       <div className={s.body}>
         <div className={s.contentLeft}>
-          <p className={s.greeting}>Hello, {greeting} 👋</p>
+          <p className={s.greeting}>Hello, {greet} 👋</p>
           <h1 className={s.title}>
             Rupenkumar
             <br />
@@ -74,9 +67,22 @@ export const Home = () => {
               Software Engineer / <br /> Blockchain Developer.
             </div>
           </div>
-          <button className={s.downloadButton} onClick={downloadResume}>
-            Download My Resume
-          </button>
+          <div className={s.buttonWrapper}>
+            <button className={s.button} onClick={downloadResume}>
+              Download My Resume
+            </button>
+            <Link
+              role="button"
+              className={`${s.hireButton} ${s.button}`}
+              href="https://www.upwork.com/freelancers/rupenkumarj"
+              target="_blank"
+            >
+              <div className={s.imageWrapper}>
+                <Image src={upworkIcon} alt="upworkIcon" quality={100} />
+              </div>
+              Hire me on Upwork!
+            </Link>
+          </div>
         </div>
         <div className={s.contentRight}>
           <Link href="/dev">

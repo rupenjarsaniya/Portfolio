@@ -11,7 +11,7 @@ const data = [
     designation: "Software Engineer",
     companyName: "Ansorbit Technolabs",
     location: "Ahmedabad, Gujarat",
-    timePeriod: "01/2023 - Present",
+    timePeriod: "01/2023 - 08/2023",
     skillToBeDeveloped: [
       "Designed and implemented a software-as-a-service platform for customers.",
       "Designed and built new business applications, including CRM, ERP, and supply chain software.",
