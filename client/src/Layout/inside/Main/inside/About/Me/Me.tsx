@@ -1,7 +1,7 @@
 import { FC } from "react";
 import s from "./Me.module.scss";
 import Image from "next/image";
-import MePic from "@/asserts/picofme.png";
+import MePic from "@/asserts/picofme (1).png";
 
 export const Me: FC = () => (
   <div className={s.wrap}>
@@ -11,7 +11,7 @@ export const Me: FC = () => (
     <div className={s.intro}>
       Hello, I am a highly skilled professional with a passion for developing
       innovative blockchain solutions. With a strong background in programming
-      languages such as Solidity, Rust, Typescript, JavaScript, and Java, I am
+      languages such as Solidity, Rust, Typescript and JavaScript, I am
       experienced in creating smart contracts and decentralized applications
       (DApps). My goal is to leverage my technical expertise and industry
       knowledge to contribute to cutting-edge projects in the blockchain space.

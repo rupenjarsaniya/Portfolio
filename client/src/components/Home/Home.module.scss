@@ -82,8 +82,21 @@
   margin-bottom: 1rem;
 }
 
-.borderSecond {
+.borderFirst {
   margin-left: 6rem;
+  animation: borderFirstAnimation 4s infinite ease-in-out;
+}
+
+@keyframes borderFirstAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .contentRight {
@@ -91,6 +104,8 @@
   width: 37rem;
   position: relative;
   margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .moon {
@@ -277,6 +292,14 @@
   left: 0.5rem;
 }
 
+.chandrayan {
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  align-self: flex-end;
+  font-size: 1.6rem;
+  letter-spacing: 1rem;
+}
+
 .buttonWrapper {
   display: flex;
   gap: 2.4rem;
@@ -284,7 +307,6 @@
 }
 
 .button {
-  // display: none;
   background: #39beff;
   border: 1px solid #39beff;
   outline: none;
@@ -316,20 +338,20 @@
   }
 }
 
-.hireButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-}
+// .hireButton {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 0.8rem;
+// }
 
-.imageWrapper {
-  width: 1.8rem;
-  height: 1.8rem;
+// .imageWrapper {
+//   width: 1.8rem;
+//   height: 1.8rem;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+// }

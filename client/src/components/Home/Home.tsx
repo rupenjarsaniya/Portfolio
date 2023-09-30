@@ -2,8 +2,6 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import s from "./Home.module.scss";
 import Link from "next/link";
 import axios from "axios";
-import Image from "next/image";
-import upworkIcon from "@/asserts/social/upwork.png";
 
 function getGreet() {
   let greet = "goodEvening";
@@ -64,14 +62,15 @@ export const Home = () => {
             <div className={`${s.subTitleBorder} ${s.borderFirst}`}></div>
             <div className={`${s.subTitleBorder} ${s.borderSecond}`}></div>
             <div className={s.subTitle}>
-              Software Engineer / <br /> Blockchain Developer.
+              Blockchain Developer /<br />
+              Software Engineer .
             </div>
           </div>
           <div className={s.buttonWrapper}>
             <button className={s.button} onClick={downloadResume}>
               Download My Resume
             </button>
-            <Link
+            {/* <Link
               role="button"
               className={`${s.hireButton} ${s.button}`}
               href="https://www.upwork.com/freelancers/rupenkumarj"
@@ -81,7 +80,7 @@ export const Home = () => {
                 <Image src={upworkIcon} alt="upworkIcon" quality={100} />
               </div>
               Hire me on Upwork!
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className={s.contentRight}>
@@ -105,6 +104,7 @@ export const Home = () => {
               <div className={s.window}></div>
             </div>
           </div>
+          <div className={s.chandrayan}>Chandrayaan3</div>
         </div>
       </div>
     </div>
