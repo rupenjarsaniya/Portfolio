@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { AppState } from "./index";
-import { useTheme } from "next-themes";
 
 export interface PortfolioEntity {
   drawerStatus: boolean;
   sidebarTab: "Files" | "Search" | "Github" | "";
   currentTab: Array<{ image: string; title: string }>;
   currentFile: string;
+  data: any;
 }
 
 const initialState: PortfolioEntity = {
@@ -19,6 +19,7 @@ const initialState: PortfolioEntity = {
     },
   ],
   currentFile: "",
+  data: null,
 };
 
 export const portfolioSlice = createSlice({
@@ -49,6 +50,9 @@ export const portfolioSlice = createSlice({
     setCurrentFile(state, action) {
       state.currentFile = action.payload;
     },
+    setData(state, action) {
+      state.data = action.payload;
+    },
   },
 });
 
@@ -58,6 +62,7 @@ export const {
   setCurrentTab,
   setPopCurrentTab,
   setCurrentFile,
+  setData,
 } = portfolioSlice.actions;
 export const selectAuthState = (state: AppState) => state.portflio.drawerStatus;
 export default portfolioSlice.reducer;

@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import s from "./Home.module.scss";
 import Link from "next/link";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { AppState } from "@/store";
 
 function getGreet() {
   let greet = "goodEvening";
@@ -21,6 +23,8 @@ function getGreet() {
 
 export const Home = () => {
   const [greet, setGreet] = useState(getGreet());
+
+  const { data } = useSelector((store: AppState) => store.portflio);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,6 +51,8 @@ export const Home = () => {
       .catch((error: Error) => console.log("Error downloading file: ", error));
   }, []);
 
+  console.log(data.designations);
+
   return (
     <div className={s.wrap}>
       <div className={s.head}>Click On The Moon 😉</div>
@@ -54,16 +60,27 @@ export const Home = () => {
         <div className={s.contentLeft}>
           <p className={s.greeting}>Hello, {greet} 👋</p>
           <h1 className={s.title}>
-            Rupenkumar
+            {data.firstname}
             <br />
-            Jarsaniya
+            {data.surname}
           </h1>
           <div className={s.subTitleWrapper}>
             <div className={`${s.subTitleBorder} ${s.borderFirst}`}></div>
             <div className={`${s.subTitleBorder} ${s.borderSecond}`}></div>
             <div className={s.subTitle}>
-              Blockchain Developer /<br />
-              Software Engineer .
+              {data.designations.map((item: string, index: number) => {
+                return (
+                  <>
+                    {item}
+                    {index !== data.designations.length - 1 && (
+                      <>
+                        &nbsp;/ <br />
+                      </>
+                    )}
+                    {index === data.designations.length - 1 && "."}
+                  </>
+                );
+              })}
             </div>
           </div>
           <div className={s.buttonWrapper}>

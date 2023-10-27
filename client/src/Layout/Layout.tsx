@@ -7,13 +7,16 @@ import { Drawer } from "./inside/Drawer";
 import { Main } from "./inside/Main";
 import { Footer } from "./inside/Footer";
 import Head from "next/head";
-import { useDispatch } from "react-redux";
-import { setCurrentFile, setCurrentTab } from "@/store/portfolioSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentFile, setCurrentTab, setData } from "@/store/portfolioSlice";
 import Angular from "@/asserts/technology/angular.svg";
+import { AppState } from "@/store";
+import { client } from "@/utils/sanity";
 
 const Layout: FC<any> = ({ children }) => {
   const Router = useRouter();
   const dispatch = useDispatch();
+  const { data } = useSelector((store: AppState) => store.portflio);
 
   useEffect(() => {
     dispatch(
@@ -24,6 +27,20 @@ const Layout: FC<any> = ({ children }) => {
     );
     dispatch(setCurrentFile("me.ts"));
   }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const query = `*[_type == 'portfolio']`;
+      const sanityResponse = await client.fetch(query);
+      dispatch(setData(sanityResponse[0]));
+    };
+
+    if (!data) {
+      fetchData();
+    }
+  }, []);
+
+  if (!data) return <h1>Loading...</h1>;
 
   return (
     <>
