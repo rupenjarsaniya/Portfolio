@@ -1,45 +1,45 @@
 import { FC } from "react";
 import s from "./Experience.module.scss";
 import Image from "next/image";
-import AnsorbitLogo from "@/asserts/logos/ansorbit.png";
-import PedalsupLogo from "@/asserts/logos/pedalsup.svg";
+import { AppState } from "@/store";
+import { useSelector } from "react-redux";
 
-const data = [
+const colors = [
   {
     background: "#00aaff60",
     color: "#c2e6ff",
-    designation: "Blockchain Developer",
-    companyName: "Pedalsup",
-    location: "Ahmedabad, Gujarat",
-    timePeriod: "09/2023 - Present",
-    logo: PedalsupLogo,
-    companyURL: "www.pedalsup.com",
   },
   {
     background: "#ff990060",
     color: "#ffebc2",
-    designation: "Software Engineer",
-    companyName: "Ansorbit Technolabs",
-    location: "Ahmedabad, Gujarat",
-    timePeriod: "01/2023 - 08/2023",
-    logo: AnsorbitLogo,
-    companyURL: "www.ansorbit.com",
   },
 ];
 
 export const Experience: FC = () => {
+  const {
+    data: { workExperience },
+  } = useSelector((state: AppState) => state.portflio);
+
   return (
     <div className={s.wrap}>
       <div className={s.cardsWrapper}>
-        {data.map((item, index) => {
+        {workExperience.map((item: any, index: number) => {
           return (
             <div
               className={s.card}
               key={index}
-              style={{ background: item.background, color: item.color }}
+              style={{
+                background: colors[index].background,
+                color: colors[index].color,
+              }}
             >
               <div className={s.logo}>
-                <Image src={item.logo} alt={item.logo} />
+                <Image
+                  src={`/asserts/${item.companyLogo}`}
+                  alt={item.companyLogo}
+                  width={100}
+                  height={100}
+                />
               </div>
               <div className={s.timePeriod}>
                 <div>{item.location}</div>
@@ -47,9 +47,8 @@ export const Experience: FC = () => {
               </div>
               <div
                 className={s.underline}
-                style={{ background: `${item.color + 25}` }}
+                style={{ background: `${colors[index].color + 25}` }}
               />
-              {/* <div className={s.location}></div> */}
               <div className={s.designation}>{item.designation}</div>
             </div>
           );

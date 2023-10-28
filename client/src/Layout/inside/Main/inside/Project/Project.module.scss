@@ -26,6 +26,12 @@
   gap: 2.4rem;
 }
 
+.underline {
+  height: 0.1px;
+  width: 100%;
+  background: var(--borderDefault);
+}
+
 .title {
   text-align: center;
   padding-top: 2.4rem;

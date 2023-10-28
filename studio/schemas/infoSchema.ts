@@ -203,7 +203,7 @@ export const infoSchema = {
             },
             {
               name: 'icon',
-              type: 'image',
+              type: 'string',
               title: 'Icon',
             },
           ],
