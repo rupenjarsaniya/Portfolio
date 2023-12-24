@@ -57,10 +57,10 @@ const data = [
     image: Sol,
     title: "skills.sol",
   },
-  {
-    image: TSX,
-    title: "projects.tsx",
-  },
+  // {
+  //   image: TSX,
+  //   title: "projects.tsx",
+  // },
   {
     image: MD,
     title: "socialLinks.md",
