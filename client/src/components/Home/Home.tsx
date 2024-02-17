@@ -87,17 +87,6 @@ export const Home = () => {
             <button className={s.button} onClick={downloadResume}>
               Download My Resume
             </button>
-            {/* <Link
-              role="button"
-              className={`${s.hireButton} ${s.button}`}
-              href="https://www.upwork.com/freelancers/rupenkumarj"
-              target="_blank"
-            >
-              <div className={s.imageWrapper}>
-                <Image src={upworkIcon} alt="upworkIcon" quality={100} />
-              </div>
-              Hire me on Upwork!
-            </Link> */}
           </div>
         </div>
         <div className={s.contentRight}>

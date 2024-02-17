@@ -13,22 +13,6 @@ export const SocialLinks: FC = () => {
   return (
     <div className={s.wrap}>
       <h1 className={s.title}>Let&apos;s Connect For Something Great! 🎉</h1>
-      <Link
-        href="https://www.upwork.com/freelancers/rupenkumarj"
-        target="_blank"
-        className={s.link}
-      >
-        <div className={s.imageWrapper}>
-          <Image
-            src="/asserts/social/upwork.png"
-            alt="upworkIcon"
-            quality={100}
-            width={100}
-            height={100}
-          />
-        </div>
-        <h3>Hire me on Upwork!</h3>
-      </Link>
       <div className={s.socialLinks}>
         {socialLinks?.map((item: any, index: number) => (
           <Link
