@@ -50,7 +50,7 @@ const Layout: FC<any> = ({ children }) => {
     }, 10000);
 
     return () => clearTimeout(timeout);
-  }, [filled, setIsModalOpen]);
+  }, []);
 
   if (!data) return <h1>Loading...</h1>;
 

@@ -12,7 +12,7 @@ export const Modal: FC<IModal> = ({ children, isOpen, onClose }) => {
   const ref = useRef(null as any);
 
   useClickOutside(ref, () => {
-    onClose();
+    // onClose();
   });
 
   if (!isOpen) return null;

@@ -26,7 +26,15 @@ export const Home = () => {
   const [greet, setGreet] = useState(getGreet());
 
   const { data } = useSelector((store: AppState) => store.portflio);
-  const { downloadResume } = useContext(AppContext);
+  const { filled, setIsModalOpen, downloadResume } = useContext(AppContext);
+
+  const handleDownload = () => {
+    if (!filled) {
+      setIsModalOpen(true);
+      return;
+    }
+    downloadResume();
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -67,7 +75,7 @@ export const Home = () => {
             </div>
           </div>
           <div className={s.buttonWrapper}>
-            <button className={s.button} onClick={downloadResume}>
+            <button className={s.button} onClick={handleDownload}>
               Download My Resume
             </button>
           </div>

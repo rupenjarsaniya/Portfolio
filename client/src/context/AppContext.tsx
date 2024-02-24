@@ -35,11 +35,6 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
   };
 
   const downloadResume = () => {
-    if (!filled) {
-      setIsModalOpen(true);
-      return;
-    }
-
     axios
       .get("./Rupen_Resume.pdf", {
         responseType: "blob",
@@ -80,10 +75,11 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
     };
 
     try {
-      await client.create(doc);
-      setIsModalOpen(false);
-      setFilled(true);
-      downloadResume();
+      await client.create(doc).then(() => {
+        setIsModalOpen(false);
+        setFilled(true);
+        downloadResume();
+      });
     } catch (error) {
       console.error("Oh no, the update failed: ", error);
     } finally {
