@@ -97,7 +97,7 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
     >
       {children}
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(true)}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         {/* Header */}
         <div className={s.modal__header}>
           <h2>Hey there! 👋</h2>
