@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { FC, useEffect } from "react";
+import React, { FC, useContext, useEffect } from "react";
 import s from "./Layout.module.scss";
 import { Header } from "./inside/Header";
 import { Sidebar } from "./inside/Sidebar";
@@ -12,11 +12,13 @@ import { setCurrentFile, setCurrentTab, setData } from "@/store/portfolioSlice";
 import Angular from "@/asserts/technology/angular.svg";
 import { AppState } from "@/store";
 import { client } from "@/utils/sanity";
+import { AppContext } from "@/context/AppContext";
 
 const Layout: FC<any> = ({ children }) => {
   const Router = useRouter();
   const dispatch = useDispatch();
   const { data } = useSelector((store: AppState) => store.portflio);
+  const { filled, setIsModalOpen } = useContext(AppContext);
 
   useEffect(() => {
     dispatch(
@@ -26,7 +28,7 @@ const Layout: FC<any> = ({ children }) => {
       })
     );
     dispatch(setCurrentFile("me.ts"));
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,7 +40,17 @@ const Layout: FC<any> = ({ children }) => {
     if (!data) {
       fetchData();
     }
-  }, []);
+  }, [data, dispatch]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (!filled) {
+        setIsModalOpen(true);
+      }
+    }, 10000);
+
+    return () => clearTimeout(timeout);
+  }, [filled, setIsModalOpen]);
 
   if (!data) return <h1>Loading...</h1>;
 

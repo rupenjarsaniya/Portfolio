@@ -41,19 +41,19 @@ export const Web3: FC = () => (
         <div className={s.image}>
           <Image src={NFTIcon} alt="NFTIcon" />
         </div>
-        <h4>NFT</h4>
-      </div>
-      <div className={s.wrapper}>
-        <div className={s.image}>
-          <Image src={TruffleIcon} alt="TruffleIcon" />
-        </div>
-        <h4>Truffle</h4>
+        <h4>NFTs</h4>
       </div>
       <div className={s.wrapper}>
         <div className={s.image}>
           <Image src={HardhatIcon} alt="HardhatIcon" />
         </div>
         <h4>Hardhat</h4>
+      </div>
+      <div className={s.wrapper}>
+        <div className={s.image}>
+          <Image src={TruffleIcon} alt="TruffleIcon" />
+        </div>
+        <h4>Truffle</h4>
       </div>
     </div>
   </div>

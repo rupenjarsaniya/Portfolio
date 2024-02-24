@@ -13,7 +13,10 @@ import { AppState } from "@/store";
 import { useSelector } from "react-redux";
 
 export const Footer: FC = () => {
-  const { currentFile } = useSelector((store: AppState) => store.portflio);
+  const {
+    data: { socialLinks },
+    currentFile,
+  } = useSelector((store: AppState) => store.portflio);
 
   const languageMode = useMemo(() => {
     const file = currentFile.split(".")[1];
@@ -46,7 +49,11 @@ export const Footer: FC = () => {
           <div className={s.imageWrapper}>
             <Image src={Github} alt="Github" />
           </div>
-          <div className={s.desc}>master*</div>
+          <div className={s.desc}>
+            <a href={socialLinks[1].link ?? "https://github.com"} target="_">
+              master*
+            </a>
+          </div>
         </div>
         <div className={s.wrapper}>
           <Image src={Error} alt="Error" />

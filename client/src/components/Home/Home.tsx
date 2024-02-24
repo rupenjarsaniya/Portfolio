@@ -1,12 +1,13 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import s from "./Home.module.scss";
 import Link from "next/link";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { AppState } from "@/store";
+import { AppContext } from "@/context/AppContext";
 
 function getGreet() {
-  let greet = "goodEvening";
+  let greet = "Good Evening";
 
   const hours = new Date().getHours();
 
@@ -25,6 +26,7 @@ export const Home = () => {
   const [greet, setGreet] = useState(getGreet());
 
   const { data } = useSelector((store: AppState) => store.portflio);
+  const { downloadResume } = useContext(AppContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,25 +35,6 @@ export const Home = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-  const downloadResume = useCallback(() => {
-    axios
-      .get("./My_Resume.pdf", {
-        responseType: "blob",
-      })
-      .then((res) => {
-        const url = window.URL.createObjectURL(new Blob([res.data]));
-        const link = document.createElement("a");
-        link.href = url;
-        link.setAttribute("download", "My_Resume.pdf");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      })
-      .catch((error: Error) => console.log("Error downloading file: ", error));
-  }, []);
-
-  console.log(data.designations);
 
   return (
     <div className={s.wrap}>

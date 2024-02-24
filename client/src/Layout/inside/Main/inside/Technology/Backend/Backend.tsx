@@ -4,6 +4,7 @@ import NodeIcon from "@/asserts/technology/node.svg";
 import MongodbIcon from "@/asserts/technology/mongodb.svg";
 import ExpressIcon from "@/asserts/technology/express.svg";
 import SanityIcon from "@/asserts/technology/sanity.svg";
+import HasuraIcon from "@/asserts/technology/hasura.png";
 import Image from "next/image";
 
 export const Backend: FC = () => (
@@ -27,6 +28,12 @@ export const Backend: FC = () => (
           <Image src={MongodbIcon} alt="mongodbIcon" />
         </div>
         <h4>Mongodb</h4>
+      </div>
+      <div className={s.wrapper}>
+        <div className={s.image}>
+          <Image src={HasuraIcon} alt="hasuraIcon" />
+        </div>
+        <h4>Hasura</h4>
       </div>
       <div className={s.wrapper}>
         <div className={s.image}>

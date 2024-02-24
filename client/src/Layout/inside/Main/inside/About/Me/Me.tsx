@@ -15,17 +15,7 @@ export const Me: FC = () => {
       <div className={s.imageWrapper}>
         <Image src={MePic} alt="MePic" quality={100} />
       </div>
-      <div className={s.intro}>
-        {bio}
-        <ul>
-          <li>I Know,</li>
-          {languages.map((item: any) => (
-            <li key={item._key}>
-              {item.language} - {item.level}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <div className={s.intro}>{bio}</div>
     </div>
   );
 };

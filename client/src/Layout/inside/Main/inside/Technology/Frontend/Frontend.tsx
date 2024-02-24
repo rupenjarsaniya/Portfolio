@@ -19,7 +19,13 @@ export const Frontend: FC = () => (
         <div className={s.image}>
           <Image src={ReactIcon} alt="reactIcon" />
         </div>
-        <h4>React</h4>
+        <h4>ReactJS</h4>
+      </div>
+      <div className={s.wrapper}>
+        <div className={s.image}>
+          <Image src={NextIcon} alt="nextIcon" />
+        </div>
+        <h4>NextJS</h4>
       </div>
       <div className={s.wrapper}>
         <div className={s.image}>
@@ -57,12 +63,7 @@ export const Frontend: FC = () => (
         </div>
         <h4>Webpack</h4>
       </div>
-      <div className={s.wrapper}>
-        <div className={s.image}>
-          <Image src={NextIcon} alt="nextIcon" />
-        </div>
-        <h4>Next</h4>
-      </div>
+
       <div className={s.wrapper}>
         <div className={s.image}>
           <Image src={MUIIcon} alt="muiIcon" />

@@ -5,6 +5,7 @@ import Layout from "@/Layout/Layout";
 import { wrapper } from "@/store";
 import { Provider } from "react-redux";
 import { Analytics } from "@vercel/analytics/react";
+import { AppProvider } from "@/context/AppContext";
 
 function App({ Component, ...rest }: AppProps) {
   const { store, props } = wrapper.useWrappedStore(rest);
@@ -13,10 +14,12 @@ function App({ Component, ...rest }: AppProps) {
   return (
     <ThemeProvider>
       <Provider store={store}>
-        <Layout>
-          <Component {...pageProps} />
-          <Analytics />
-        </Layout>
+        <AppProvider>
+          <Layout>
+            <Component {...pageProps} />
+            <Analytics />
+          </Layout>
+        </AppProvider>
       </Provider>
     </ThemeProvider>
   );
